@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        function ShowTheDay() {
+            var w = new Date().getDay();
+            var day;
+            if (w == 0) day = "Sunday";
+            else if (w == 1) day = "Monday";
+            else if (w == 2) day = "Tuesday";
+            else if (w == 3) day = "Wednesday";
+            else if (w == 4) day = "Thursday";
+            else if (w == 5) day = "Friday";
+            else if (w == 6) day = "Saturday";
+            document.write("<h3>Today is " + day + "</h3>");
+        }
+        ShowTheDay(); // Calling it
+    </script>
+    </body>
+</html>

@@ -24,6 +24,10 @@ for(var i=1;i<=10;i++){
     console.log(i);
 }
 
+
+
+
 // for-in for-of 
 // for/in loop is used for iterating through the properties of an object
 // for/of if any object is iterable 
+
