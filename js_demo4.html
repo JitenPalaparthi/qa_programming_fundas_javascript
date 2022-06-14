@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>if else demo</title>
+</head>
+
+<body>
+    <script>
+
+
+
+    </script>
+    <button onclick='javascript:{let answer = confirm("Are you sure?")
+            if (answer === 1) { // true can be 1; false can be 0
+                // in javascript there is also === (triple = operator); It compares not only the data but also the datatype
+                alert("Yes, I am sure");
+            } else {
+                alert("No, I am not sure; Ok or cancel only else part will be executed due to ===");
+            }}'>Confirm</button>
+    <button onclick='javascript:{
+            var i = Math.random() * 2;
+            console.log("Teh value of i:",i);
+            if (i === 1) {
+                alert("They are the same");
+            }
+            else if (i < 1) {
+                alert("i is smaller");
+            }
+            else if (i > 1.5) { 
+            alert("i is bigger than 1.5");
+            }
+            else{
+                alert("i is bigger then 1 but smaller than 1.5");
+            }
+    }'>Random</button>
+</body>
+
+</html>

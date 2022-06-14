@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <script src="js/message.js"></script>
+
+    <script>
+        DisplyMessage();
+
+        function CanIConfirm() {
+            var answer = confirm("Are you sure that you are going to execute this?");
+            alert(answer); // If you click on ok it returns true; of if you click on cancel it returns false
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <script src="demo1.js"></script>
+    <h3>How to call javascript in html</h3>
+    <button onclick='javascript:{var greet="Hello Folks";alert(greet);}'>Click Me</button>
+
+    <button onclick="CanIConfirm()">Are you sure?</button>
+</body>
+
+</html>
