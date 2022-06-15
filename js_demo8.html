@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Dom exmple
+    </title>
+</head>
+
+<body>
+    <script>
+        var colors=["red","blue","green","yellow"]
+        var count = 0
+        
+        function GetTextById(id) {
+            let element = document.getElementById(id)
+            alert(element.innerText)
+        }
+        function SetTextById(id,text) {
+            let element = document.getElementById(id)
+            //alert(element.innerText)
+            element.innerText=text
+        }
+        function SetHTMLById(id,text) {
+            let element = document.getElementById(id)
+            //alert(element.innerText)
+            element.innerHTML=text
+        }
+        function GetHTMLById(id) {
+            let element = document.getElementById(id)
+            alert(element.innerHTML)
+        }
+
+        function GetTextByTag(tag) {
+            let elements = document.getElementsByTagName(tag);
+            for(e of elements){
+                alert(e.innerText)
+            }
+            
+            //alert(element.innerText)
+        }
+
+        function GetTextByClass(cls) {
+            let elements = document.getElementsByClassName(cls);
+            for(e of elements){
+                alert(e.innerText)
+            }
+            //alert(element.innerText)
+        }
+
+        function SetTextColorByClass(cls,color) {
+            let elements = document.getElementsByClassName(cls);
+            for(e of elements){
+                //alert(e.innerText)
+                e.style.color=color
+            }
+            //alert(element.innerText)
+        }
+
+        function SetTextSeqColorByClass(cls) {
+            if((count+1)>=colors.length){
+                count = 0
+            }  
+
+            let elements = document.getElementsByClassName(cls);
+            for(e of elements){
+                //alert(e.innerText)
+                e.style.color=colors[count]
+                e.style.backgroundColor = colors[colors.length-(count+1)]
+            }
+            count++
+            //alert(element.innerText)
+        }
+
+
+    </script>
+    <div id="hello" class="demo">
+        <h3>First div Tag</h3> 
+    </div>
+    <div>
+        <h3>Second div Tag</h3>
+    </div>
+    <h3 class="demo">This is h3 tag with class name</h3>
+    <button onclick="GetTextById('hello');"> Get Text By ID</button>
+    <button onclick="SetTextById('hello','<h1>Hello World. This text is added at a later part by using DOM</h1>');"> Set Text By ID</button>
+    <button onclick="SetHTMLById('hello','<h1>Hello World. This text is added at a later part by using DOM</h1>');"> Set HTML By ID</button>
+
+    <button onclick="GetHTMLById('hello');"> Get HTML By ID</button>
+    <button onclick="GetTextByTag('div');"> Get Text By Tag</button>
+    <!--<button onclick="GetTextById('hello');"> Get HTML By Tag</button>-->
+    <button onclick="GetTextByClass('demo');"> Get Text By Class</button>
+    <button onclick="SetTextColorByClass('demo','red');"> Set Text Color By Class</button>
+    <button onclick="SetTextSeqColorByClass('demo','red');"> Set Text Sequence Color By Class</button>
+</body>
+
+</html>
