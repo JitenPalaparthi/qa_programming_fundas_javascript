@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/JavaScript">
+
+function valDrink(theForm) 
+{
+    var element = document.getElementById("divInfo");
+        
+    if (theForm.drinks.value=="Select a Drink"){
+        element.innerText="Select a drink is not a drink";
+        return false;
+    }
+    //document.getElementById(divInfo).innerText="";
+    if (theForm.drinks.value=="Soup" &&
+        (theForm.CheckMilk.checked ||
+        theForm.CheckSugar.checked)) {
+        //alert("You can't have milk or sugar with soup!");
+        element.innerText="You can't have milk or sugar with soup!";
+            return false; 	// Problem
+    }
+    else
+            return true; 	// OK
+}
+</script>
+</head>
+
+<body>
+    <form method="get" onsubmit="return valDrink(this)">
+       <select name="drinks">
+        <option>Select a Drink</option>
+        <option>Tea</option>
+        <option>Coffee</option>
+        <option>Soup</option>
+       </select>
+        <input type="checkbox" name="CheckMilk" value="Yes" />Milk
+        <input type="checkbox" name="CheckSugar" value="Yes" />Sugar
+        <input type="submit" name="OKButton" value="Vend" />
+        <div id="divInfo"></div>
+    </form>
+</body>
+
+</html>

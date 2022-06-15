@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/JavaScript">
+
+function valDrink(theForm) 
+{
+    //document.getElementById(divInfo).innerText="";
+    if (theForm.RadioDrink[2].checked &&
+        (theForm.CheckMilk.checked ||
+        theForm.CheckSugar.checked)) {
+        var element = document.getElementById("divInfo");
+        //alert("You can't have milk or sugar with soup!");
+        element.innerText="You can't have milk or sugar with soup!";
+            return false; 	// Problem
+    }
+    else
+            return true; 	// OK
+}
+</script>
+</head>
+
+<body>
+    <noscript>
+        <p> Seems java script is disabled.If you are using Chrome or Brave
+            settings>Privacy and Security> Site and Shield Settings>Javascript>Sites can use Javascript
+        </p>
+    </noscript>
+    <form method="get" name="Drinks" onsubmit="return valDrink(this)">
+        <input type="radio" checked name="RadioDrink" value="Tea" />Tea
+        <input type="radio" name="RadioDrink" value="Coffee" />Coffee
+        <input type="radio" name="RadioDrink" value="Soup" />Soup
+        <input type="checkbox" name="CheckMilk" value="Yes" />Milk
+        <input type="checkbox" name="CheckSugar" value="Yes" />Sugar
+        <input type="submit" name="OKButton" value="Vend" />
+        <div id="divInfo"></div>
+    </form>
+</body>
+
+</html>
