@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <title> jQuery demo-5</title>
+</head>
+
+<body>
+    <script>
+        function GetSelected() {
+            if ($("#options option:selected").index() != 0) {
+                alert("Selected index is " + $("#options option:selected").index() + " and selected text is " +
+                    $("#options option:selected").text()
+                );
+            }
+            return false;
+        };
+
+        $(document).ready(function () {
+            $("ul li").click(function () {
+                if ($(this).css("color") == "rgb(255, 0, 0)") {
+                    $(this).css("color","green");
+                }else{
+                $(this).css("color", "red");
+                }
+            });
+        });
+
+    </script>
+    <form onsubmit="return GetSelected();">
+        Available Options:<select id="options" title="Available options">
+            <option>Select an option</option>
+            <option>Option-1</option>
+            <option>Option-2</option>
+            <option>Option-3</option>
+            <option>Option-4</option>
+            <option>Option-5</option>
+            <option>Option-6</option>
+            <option>Option-7</option>
+        </select>
+
+        Available ListItems:<ul id="lists" title="Available Listitems">
+            <li>ListItem-1
+            </li>
+            <li>ListItem-2
+            </li>
+            <li>ListItem-3
+            </li>
+            <li>ListItem-4
+            </li>
+            <li>ListItem-5
+            </li>
+            <li>ListItem-6
+            </li>
+            <li>ListItem-2
+            </li>
+        </ul>
+
+        <input type="submit" />
+    </form>
+</body>
+
+</html>

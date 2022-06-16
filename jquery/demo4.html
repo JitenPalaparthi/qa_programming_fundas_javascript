@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        jQuery demo-4
+    </title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <script>
+        function GetGenderInfo() {
+            var v = $("input[name=gender]:checked").val();
+            var info = "";
+            if (v == "m") {
+                info = " Male is selected";
+            } else {
+                info = " Female is selected";
+            }
+            alert(info);
+            return false;
+        }
+    </script>
+    <form onsubmit="return GetGenderInfo();">
+       M: <input type="radio" name="gender" value="m" title="Gender selection"/>
+       F: <input type="radio" name="gender" value="f" title="Gender selection" checked />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
