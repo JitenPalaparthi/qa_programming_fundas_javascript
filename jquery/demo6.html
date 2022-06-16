@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <script>
+        var lis = ""
+        var count = 10;
+        var colors = ["red", "blue", "green", "yellow", "pink", "orange", "black", "grey", "brown", "lightblue", "white"]
+        $(document).ready(function () {
+            for (let i = 1; i <= 10; i++) {
+                $('<li>' + colors[i] + '</li>').appendTo($('#list'));
+                //lis = lis + "<li>List Item-" + i + "</li>"
+                //$("#list").append("<li>List Item-" + i+100 + "</li>")
+            }
+            //$("#list").html(lis);
+            //$('#list').append(lis);
+            $("#btn1").click(function () {
+                count++
+                if (count <= 10) {
+                    $('<li>' + colors[count] + '</li>').appendTo($('#list'));
+                } else {
+                    $('<li> Color-' + count + '</li>').appendTo($('#list'));
+                }
+            });
+            $("#btn2").click(function () {
+                $('li:nth-child(' + count + ')').remove();
+                count--
+            });
+        })
+    </script>
+    <ul id="list">
+    </ul>
+    <button id="btn1">Add</button>
+    <button id="btn2">Remove</button>
+</body>
+
+</html>
