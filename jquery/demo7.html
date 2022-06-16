@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <title>jQuery demo on applying styles</title>
+    <style>
+        .UnTransform30 {
+            color: Blue;
+            font-size: 14pt;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: rotate(360deg);
+        }
+        .Transform30 {
+            color: Red;
+            font-size: 14pt;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var count = 2;
+        var myStyle = {
+            "color": "Red",
+            "font-size": "14pt",
+            "position": "absolute",
+            "left": "100px",
+            "top": "100px",
+            "transform": "rotate(30deg)"
+        }
+        $(document).ready(function () {
+            $("#btn1").click(function() {
+                if (count % 2 == 0) {
+                    $("#myDiv").removeAttr("style");
+                    if($("#myDiv").hasClass("Transform30")){
+                        $("#myDiv").removeClass("Transform30");     
+                    }
+                    $("#myDiv").addClass('UnTransform30');
+                } else {
+                    if($("#myDiv").hasClass("UnTransform30")){
+                        $("#myDiv").removeClass("UnTransform30");     
+                    }
+                   $("#myDiv").addClass("Transform30");
+                   //$("#myDiv").css(myStyle);
+                }
+                count++;
+            });
+        });
+    </script>
+    <div id="myDiv">
+        <p>Can you transform me?</p>
+    </div>
+    <button id="btn1">Transform</button>
+</body>
+
+</html>

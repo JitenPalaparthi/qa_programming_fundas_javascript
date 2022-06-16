@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuery demo</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function (e) {
+                var btn = e.target;
+                //         alert("Button "+btn.id+ "has been clicked")
+
+                // switch (btn.id) {
+                //     case "btn1":
+                //         $("#myDiv p").text("Button id btn1 has been clicked");
+                //         break;
+                //     case "btn2":
+                //         $("#myDiv p").text("Button id btn2 has been clicked");
+                //         break;
+                // }
+                //alert(btn.innerText);
+                switch (btn.innerText) {
+                    case "Target-1":
+                        $("#myDiv p").text("Button--> Target-1 has been clicked ");
+                        break;
+                    case "Target-2":
+                        $("#myDiv p").text("Button--> Target-2 has been clicked ");
+                        break;
+                    case "Target-3":
+                        $("#myDiv p").text("Button--> Target-3 has been clicked ");
+                        break;
+                }
+            });
+        })
+    </script>
+    <div id="myDiv">
+        <p></p>
+    </div>
+    <button id="btn1">Target-1</button>
+    <button id="btn2">Target-2</button>
+    <button>Target-3</button>
+</body>
+
+</html>

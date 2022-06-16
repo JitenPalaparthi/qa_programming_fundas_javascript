@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> event bubbling</title>
+
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#div1").click(function (e) {
+                alert($(e.target).attr('id') + " clicked showing in div1");
+            });
+            $("#div2").click(function (e) {
+                alert($(e.target).attr('id') + " clicked showing in div2");
+            });
+            $("#p1").click(function (e) {
+                alert($(e.target).attr('id') + " clicked");
+                return false; // to stop bubbling return false
+            });
+            $("#p2").click(function (e) {
+                alert($(e.target).attr('id') + " clicked");
+                //return false; // to stop bubbling return false
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <p id="p2">Click here first (Paragraph in div1)</p>
+        <!--Outer div1-->
+        <div id="div2">
+            <!--inner div2-->
+            <p id="p1">Click here first (Paragraph in div2)</p>
+        </div>
+    </div>
+</body>
+
+</html>
