@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        var allcustomers
         $(document).ready(function () {
             var getCustomers = "http://localhost:5000/getcustomers";
             $.ajax({
@@ -19,12 +20,13 @@
                         "<td>Address</td><td>City</td><td>Region</td><td>PostalCode</td>" +
                         "<td>Country</td><td>Phone></td><td>Fax</td><td>edit</td><td>delete</td></tr>"
                     console.log(customers);
+                    allcustomers = customers;
                     var count=0;
                     for (c of customers) {
                             table += "<tr><td>"+(count+1)+"</td><td>" + c.CustomerID + "</td><td>" + c.CompanyName + "</td><td>" + c.ContactName + "</td><td>" + c.ContactTitle + "</td>" +
                             "<td>" + c.Address + "</td><td>" + c.City + "</td><td>" + c.Region + "</td><td>" + c.PostalCode + "</td>" +
                             "<td>" + c.Country + "</td><td>" + c.Phone + "></td><td>" + c.Fax + "</td>" +
-                            "<td><button id='btnedit' onclick=onEdit(c.CustomerID);>edit</button></td><td><button>delete</button></td><tr>"
+                            "<td><button id='btn-"+count+"'' onclick='onEdit(this);'>edit</button></td><td><button>delete</button></td><tr>"
                              count++;
                         }
                     table += "</table>"
@@ -37,8 +39,10 @@
             })
         });
 
-        function onEdit(this){
-            alert(custid," To be edited")
+        function onEdit(id){
+            var btnid = $(id).attr("id").split("-")[1]
+            alert(btnid);
+            alert(allcustomers[btnid].CustomerID);
         }
     </script>
     <div id="myDiv"></div>
